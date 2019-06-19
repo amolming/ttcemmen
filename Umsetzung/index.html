@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="css/style.css" media="screen"/>
+         <script type="text/javascript" src="JS/scripts.js"></script>
+        <title>Startseite - TTC Emmen</title>
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="logo">
+                    <a href="index.html">
+                        <!-- Beim Umsetzug natürlich SVG -->
+                        <img class="Logo" src="img/Logo.svg" alt="Logo TTC Emmen">
+                    </a>
+                </div>
+            
+                <ul class="desktopTabletMenu">
+                    <li><a class="active" href="index.html">Startseite</a></li>
+                    <li><a href="verein.html">Verein</a></li>
+                    <li><a href="programm.html">Programm</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+                
+                <div class="pageTitle">
+                        Willkommen TTC Emmen
+                </div>
+                <div class="mobileMenu">
+                    <div class="mobileMenuButton" onclick="toggleMenu(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                    <div id="mobileMenuLinks" class="mobile-container">
+                        <a href="index.html" class="active">Startseite</a>
+                        <a href="Verein.html">Verein</a>
+                        <a href="Programm.html">Programm</a>
+                        <a href="Kontakt.html">Kontakt</a>
+                    </div>
+                </div>
+             </div>
+            <div class="content">
+                <div>
+                    <div style="background-image:url(img/tripple_1.jpg);" class="trippleImages" alt="TTC Emmen Challengday"></div>
+                    <div style="background-image:url(img/tripple_2.jpg);" class="trippleImages" alt="TTC Emmen Challengday"></div>
+                    <div style="background-image:url(img/tripple_3.jpg);" class="trippleImages" alt="TTC Emmen Challengday"></div>
+
+                </div>
+                <div>
+                    <h3>Ein kniffliger Sport</h3>
+                    <p>
+                        Tischtennis ist ein schwieriger Sport. Der Ball erreicht Geschwindigkeiten von bis zu 
+                        170 km/h und dreht sich bis zu 150 Mal pro Sekunde um die eigene Achse. Wer da den Schläger 
+                        z.B. einen Millimeter zu weit öffnet, schiesst den Ball sofort ins Aus.
+
+                        Tischtennis-Techniken sehen von aussen zwar einfach aus, sind aber hochkomplex. Das richtige 
+                        Timing (den richtigen Zeitpunkt den Ball zu treffen) ist äusserst schwierig zu finden, da der Ball den Schläger 
+                        nur ca. 1/1000 Sekunde berührt und wir keine Zeit zum Überlegen haben. Alles muss instinktiv (automatisiert) ablaufen.
+                    </p>
+                </div>
+                <div id="map"></div>
+                <script>
+
+                    // This example displays a marker at the center of Australia.
+                    // When the user clicks the marker, an info window opens.
+              
+                    function initMap() {
+                      var TTCEmmen = {lat: 47.0788751, lng: 8.2787567};
+                      var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 16,
+                        center: TTCEmmen,
+                        zoomControl: true,
+                        zoomControlOptions: {
+                            position: google.maps.ControlPosition.BOTTOM_LEFT
+                        }
+                      });
+                    //  map.setOptions({zoomControl: true, mapTypeControl: true});
+
+              
+                      var contentString = '<div id="content">'+
+                          '<div id="bodyContent">'+
+                          '<div style="width:100px; font-weight:bold; padding-bottom:5px">TTC Emmen</div>Schulhaus Gersag <br>Alte Turnhalle<br>R&uuml;eggisingerstrasse<br>6020  Emmenbr&uuml;cke'+
+                          '</div>'+
+                          '</div>';
+              
+                      var infowindow = new google.maps.InfoWindow({
+                        content: contentString
+                      });
+              
+                      var marker = new google.maps.Marker({
+                        position: TTCEmmen,
+                        map: map,
+                        title: 'TTC Emmen'
+
+                      });
+                      
+                     infowindow.open(map, marker);
+                      
+                    }
+                  </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhGaRI-iIJmeaZn2AImzlliqQ94Ux8dD8&signed_in=true&libraries=places&callback=initMap"
+                async defer></script>
+
+            </div>
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="JS/scripts.js"></script>
+        <link rel="stylesheet" href="css/style.css" media="screen"/>
+        <title>Kontakt - TTC Emmen</title>
+   </head>
+
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="logo">
+                    <a href="index.html">
+                        <!-- Beim Umsetzug natürlich SVG -->
+                        <img class="Logo" src="img/Logo.svg" alt="Logo TTC Emmen">
+                    </a>
+                </div>
+            
+                <ul class="desktopTabletMenu">
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="verein.html">Verein</a></li>
+                    <li><a href="programm.html">Programm</a></li>
+                    <li><a class="active" href="kontakt.html">Kontakt</a></li>
+                </ul>
+             
+                <div class="pageTitle">
+                        Wie kann man uns kontaktieren?
+                </div>
+                <div class="mobileMenu" >
+                    <div class="mobileMenuButton" onclick="toggleMenu(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                    <div id="mobileMenuLinks" class="mobile-container">
+                        <a href="index.html" >Logo</a>
+                        <a href="Verein.html">Verein</a>
+                        <a href="Programm.html">Programm</a>
+                        <a class="active" href="Kontakt.html">Kontakt Sie uns</a>
+                    </div>
+                </div>
+             </div>
+            <div class="content">
+
+                <div style="display: block">       
+                
+                <div class="card">
+                    <img src="img/avatar.jpg" alt="John Gundersen" style="width:100%">
+                    <h1>Pr&auml;sident</h1>
+                    <p class="title">John Gundersen</p>
+                    <p>041 280 99 73</p>
+                    <div style="margin: 24px 0;">
+                        <a href="#"><i class="fa fa-dribbble"></i></a> 
+                        <a href="#"><i class="fa fa-twitter"></i></a>  
+                        <a href="#"><i class="fa fa-linkedin"></i></a>  
+                        <a href="#"><i class="fa fa-facebook"></i></a> 
+                    </div>
+                    <p><button><a href="mailto:jngee@bluewin.ch">Kontakt</a></button></p>
+                </div>
+                <div class="card">
+                    <img src="img/avatar.jpg" alt="Katrin Haupt" style="width:100%">
+                    <h1>Aktuar</h1>
+                    <p class="title">Katrin Haupt</p>
+                    <p>041 280 25 38</p>
+                    <div style="margin: 24px 0;">
+                        <a href="#"><i class="fa fa-dribbble"></i></a> 
+                        <a href="#"><i class="fa fa-twitter"></i></a>  
+                        <a href="#"><i class="fa fa-linkedin"></i></a>  
+                        <a href="#"><i class="fa fa-facebook"></i></a> 
+                    </div>
+                    <p><button><a href="mailto:k.haupt@gmx.ch">Kontakt</a></button></p>
+                </div>
+                <div class="card">
+                        <img src="img/ming_amol.jpg" height="240" alt="Amol Ming" style="width:100%; border-radius: 50%">
+                        <h1>Beisitzer</h1>
+                        <p class="title">Amol Ming</p>
+                        <p>041 280 99 73</p>
+                        <div style="margin: 17px 0;">
+                            <a href="#"><i class="fa fa-dribbble"></i></a> 
+                            <a href="#"><i class="fa fa-twitter"></i></a>  
+                            <a href="#"><i class="fa fa-linkedin"></i></a>  
+                            <a href="#"><i class="fa fa-facebook"></i></a> 
+                        </div>
+                        <p><button><a href="mailto:amol.ming@gmx.ch">Kontakt</a></button></p>
+                    </div>
+                <div class="card">
+                    <img src="img/avatar.jpg" alt="Duy Duong" style="width:100%">
+                    <h1>Beisitzer</h1>
+                    <p class="title">Duy Duong </p>
+                    <p>078 661 24 37</p>
+                    <div style="margin: 24px 0;">
+                        <a href="#"><i class="fa fa-dribbble"></i></a> 
+                        <a href="#"><i class="fa fa-twitter"></i></a>  
+                        <a href="#"><i class="fa fa-linkedin"></i></a>  
+                        <a href="#"><i class="fa fa-facebook"></i></a> 
+                    </div>
+                    <p><button><a href="mailto:duyduong.dd@gmail.com.ch">Kontakt</a></button></p>
+                 </div>
+                 <hr width="100%">
+                 <h3 style="width:150px; margin:0 auto; padding:20px">Kontaktformular</h3>
+                <table class="tableKontakt">
+                    <tr>
+                        <td width="20%">Name</td>
+                        <td width="80%"><input name="txtName" type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td>Vorname</td>
+                        <td><input name="txtVorName" type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input name="txtName" type="email" value=""></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <textarea class="textArea"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" name="submitForm" value="Senden"></td>
+                    </tr>
+
+                </table>
+                    
+             </div>
+            </div> 
+         </div>
+    </body>
+</html>

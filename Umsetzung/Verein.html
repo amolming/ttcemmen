@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="css/style.css" media="screen"/>
+        <title>Verein - TTC Emmen</title>
+        <script>
+        window.onload = function() {
+
+        // Video
+        var video = document.getElementById("video");
+
+        // Buttons
+        var playButton = document.getElementById("play-pause");
+        var muteButton = document.getElementById("mute");
+        var fullScreenButton = document.getElementById("full-screen");
+
+        // Sliders
+        var seekBar = document.getElementById("seek-bar");
+        var volumeBar = document.getElementById("volume-bar");
+
+
+        // Event listener for the play/pause button
+        playButton.addEventListener("click", function() {
+            if (video.paused == true) {
+                // Play the video
+                video.play();
+
+                // Update the button text to 'Pause'
+                playButton.innerHTML = "&#9208;";
+            } else {
+                // Pause the video
+                video.pause();
+
+                // Update the button text to 'Play'
+                playButton.innerHTML = "&#9654;";
+            }
+        });
+
+        video.addEventListener("mousedown", function() {
+            playButton.click();
+        });
+        // Event listener for the mute button
+        muteButton.addEventListener("click", function() {
+            if (video.muted == false) {
+                // Mute the video
+                video.muted = true;
+
+                // Update the button text
+                muteButton.innerHTML = "&#128266;";
+
+            } else {
+                // Unmute the video
+                video.muted = false;
+
+                // Update the button text
+                muteButton.innerHTML = "&#128263;";
+            }
+        });
+
+
+        // Event listener for the full-screen button
+        fullScreenButton.addEventListener("click", function() {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen(); // Firefox
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen(); // Chrome and Safari
+            }
+        });
+
+
+        // Event listener for the seek bar
+        seekBar.addEventListener("change", function() {
+            // Calculate the new time
+            var time = video.duration * (seekBar.value / 100);
+
+            // Update the video time
+            video.currentTime = time;
+        });
+
+
+        // Update the seek bar as the video plays
+        video.addEventListener("timeupdate", function() {
+            // Calculate the slider value
+            var value = (100 / video.duration) * video.currentTime;
+
+            // Update the slider value
+            seekBar.value = value;
+        });
+
+        // Pause the video when the seek handle is being dragged
+        seekBar.addEventListener("mousedown", function() {
+            video.pause();
+        });
+
+        // Play the video when the seek handle is dropped
+        seekBar.addEventListener("mouseup", function() {
+            video.play();
+        });
+
+        // Event listener for the volume bar
+        volumeBar.addEventListener("change", function() {
+            // Update the video volume
+            video.volume = volumeBar.value;
+        });
+        }
+    </script>
+   </head>
+   <body>
+        <div class="main">
+            <div class="header">
+                <div class="logo">
+                    <a href="index.html">
+                        <!-- Beim Umsetzug natürlich SVG -->
+                        <img class="Logo" src="img/Logo.svg" alt="Logo TTC Emmen">
+                    </a>
+                </div>
+            
+                <ul class="desktopTabletMenu">
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a class="active" href="verein.html">Verein</a></li>
+                    <li><a href="programm.html">Programm</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+                
+                <div class="pageTitle">
+                    Hier spielen Menschen jeden Alters
+                </div>
+                <div class="mobileMenu">
+                    <div class="mobileMenuButton" onclick="toggleMenu(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>                 
+                    </div>
+                    <div id="mobileMenuLinks" class="mobile-container">
+                        <a href="index.html">Startseite</a>
+                        <a class="active" href="Verein.html">Verein</a>
+                        <a href="Programm.html">Programm</a>
+                        <a href="Kontakt.html">Kontakt</a>
+                    </div>
+                </div>
+             </div>
+            <div class="content">
+                <div id="video-container">
+                        <!-- Video -->
+                        <video id="video" width="100%">
+                          
+                          <source src="videos/video_00.mp4" type="video/mp4">
+                          <p>
+                            Your browser doesn't support HTML5 video.
+                            <a href="videos/video_00.mp4">Download</a> the video instead.
+                          </p>
+                        </video>
+                        <!-- Video Controls -->
+                        <div id="video-controls">
+                            <button type="button" id="play-pause" class="play">&#9654;</button>
+                            <input type="range" id="seek-bar" value="0">
+                            <button type="button" id="full-screen">[&nbsp;&nbsp;&nbsp;] </button>
+                            <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+                            <button type="button" id="mute">&#128263;</button>
+
+                        </div>
+                    </div>
+                    <p>
+                        In unserem Klub spielen Menschen jeden Alters und aus den verschiedensten Ländern dieser Welt.
+                            Einige spielen seit vielen Jahren, einige sind erst seit kurzem bei uns. Die einten möchten einfach zusammen locker spielen,
+                            andere haben sportliche Ziele und möchten auch Wettkämpe spielen und gewinnen.
+
+                        Daher bieten wir dir neben den (extrem günstigen) freien Trainingsmöglichkeiten am Montag, Mittwoch und Freitag ...
+                        ... neu am Montag auch die Chance, für einen höheren Trainingsbeitrag in unserer neuen Fördergruppe an qualifizierten,
+                            geleiteten Trainings teilzunehmen, alle modernen Tischtechnik-Techniken zu erlernen, markante Fortschritte in deinem 
+                            Tischtennis-Spiel zu erzielen und schliesslich wettkampf-tauglich zu werden.
+                    
+                    </p>
+                    <p>
+                        Wenn du Interesse am Tischtennis hast oder einfach mal herausfinden möchtest, ob dieser Spiel-Sport etwas für dich ist, 
+                        dann melde dich bei uns oder komm einfach mal in eines unserer Trainings.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            var i = 0;
+            var sources = ['videos/video_01.mp4', 'videos/video_02.mp4', 'videos/video_03.mp4', 'videos/video_004.mp4', 'videos/video_05.mp4', 'videos/video_06.mp4'];
+            var vid = document.getElementById("video");
+            vid.onended = function() {
+                this.src = sources[i++ % sources.length];
+                this.load();
+                this.play();
+            };
+
+var video = document.querySelector('video');
+
+video.addEventListener('timeupdate', function() {
+  // don't have set the startTime yet? set it to our currentTime
+  if (!this._startTime) this._startTime = this.currentTime;
+
+  var playedTime = this.currentTime - this._startTime;
+
+  if (playedTime >= 10) this.duration=9000;
+});
+
+video.addEventListener('seeking', function() {
+  // reset the timeStart
+  this._startTime =5;
+});
+        </script>
+        <script type="text/javascript" src="JS/scripts.js"></script>
+    </body>
+
+</html>

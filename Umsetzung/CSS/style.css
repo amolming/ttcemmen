@@ -5,7 +5,7 @@ body {
     margin: 0px;
     background-image:url('../img/mainBackground.png'); background-repeat: repeat
  }
- footer{text-align: center;background-color:rgba(255,255,255,0.3)}
+ footer{text-align: center;background-color:rgba(255,255,255,0.3); width:100%; display:inline-block}
 video{ border-radius: 15px;}
  #video-container {
     width: 100%;
@@ -30,7 +30,8 @@ audio{width:100%}
 	background-image: -webkit-linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
 	background-image: -ms-linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
 
-	background-image: -webkit-gradient(
+    background-image: 
+    -webkit-gradient(
 		linear,
 		left bottom,
 		left top,
@@ -267,11 +268,12 @@ table.tableKontakt input:not([type='submit']){width:100%; margin:0 auto;}
         display: inline-block; 
         float:right; 
         position:fixed; 
-        top:0px; 
+        top:40px; 
         right:20px; 
         width:35px; 
         height:35px;
         color:black;
+        z-index:9999
     }
     ul.desktopTabletMenu { display: none}
     .pageTitle{
@@ -317,8 +319,9 @@ table.tableKontakt input:not([type='submit']){width:100%; margin:0 auto;}
         display: inline-block; 
         float:right; 
         position:fixed; 
-        top:10px; 
+        top:40px; 
         right:20px;
+        z-index:9999
     }
     ul.desktopTabletMenu { display: none}
     .pageTitle{

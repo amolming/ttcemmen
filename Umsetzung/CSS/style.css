@@ -268,7 +268,7 @@ table.tableKontakt input:not([type='submit']){width:100%; margin:0 auto;}
         display: inline-block; 
         float:right; 
         position:fixed; 
-        top:40px; 
+        top:20px; 
         right:20px; 
         width:35px; 
         height:35px;
@@ -319,7 +319,7 @@ table.tableKontakt input:not([type='submit']){width:100%; margin:0 auto;}
         display: inline-block; 
         float:right; 
         position:fixed; 
-        top:40px; 
+        top:20px; 
         right:20px;
         z-index:9999
     }

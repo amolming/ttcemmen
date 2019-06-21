@@ -5,6 +5,7 @@ body {
     margin: 0px;
     background-image:url('../img/mainBackground.png'); background-repeat: repeat
  }
+ footer{text-align: center;background-color:rgba(255,255,255,0.3)}
 video{ border-radius: 15px;}
  #video-container {
     width: 100%;
@@ -74,7 +75,7 @@ button a {color:white}
     float:left;
     margin:15px;
   }
-  
+  .card img{ width:100%; border-radius: 50%}
   .title {
     color: grey;
     font-size: 18px;
@@ -299,7 +300,7 @@ table.tableKontakt input:not([type='submit']){width:100%; margin:0 auto;}
         margin:0 auto;
     }
     .content .bigImage{
-        width:45%; 
+        width:95%; 
         margin:0 auto; 
         display:block;
     }

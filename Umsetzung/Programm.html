@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" src="JS/scripts.js"></script>
         <link rel="stylesheet" href="css/style.css" media="screen"/>
@@ -32,7 +33,7 @@
                         <div class="bar3"></div>
                     </div>
                     <div id="mobileMenuLinks" class="mobile-container">
-                        <a href="index.html" >Logo</a>
+                        <a href="index.html">Startseite</a>
                         <a href="Verein.html">Verein</a>
                         <a class="active" href="Programm.html">Programm</a>
                         <a href="Kontakt.html">Kontakt</a>
@@ -40,8 +41,8 @@
                 </div>
              </div>
             <div class="content">
-                <audio controls width="100%">
-                        <source src="recordings/ttcemmen_audio.mp3" type="audio/mp3">
+                <audio controls width="100%" id="audio">
+                        <source src="audio/ttc_00.mp3" type="audio/mp3">
                         Your browser does not support the audio element.
                 </audio>
                 <h3>Freies Spiel:</h3>
@@ -74,39 +75,60 @@
                         </tr>
                         <tr>
                             <td>Montag</td>
-                            <td>Plan X</td>
-                            <td>Plan XY</td>
+                            <td>Erwaschsene</td>
+                            <td>Junior</td>
                         </tr>
                         <tr>
                             <td>Dienstag</td>
-                            <td>Plan XX</td>
-                            <td>Plan YZY</td>
+                            <td>Junoir</td>
+                            <td>Junior</td>
                         </tr>
                         <tr>
                             <td>Mittwoch</td>
-                            <td>Plan XXY</td>
-                            <td>Plan XAX</td>
+                            <td>Erwachsene</td>
+                            <td>Senioren</td>
                         </tr>
                         <tr>
                             <td>Donnerstag</td>
-                            <td>Plan XXX</td>
-                            <td>Plan XY</td>
+                            <td>Senioren</td>
+                            <td>Junior</td>
                         </tr>
                         <tr>
                             <td>Freitag</td>
-                            <td>Plan YYY</td>
-                            <td>Plan YYY</td>
+                            <td>Erwachsene</td>
+                            <td>Junior</td>
                         </tr>
                         <tr>
                             <td>Samstag</td>
-                            <td>Plan XXY</td>
-                            <td>Plan XZY</td>
+                            <td>Senioren</td>
+                            <td>Senioren</td>
                         </tr>
                     </table>
-               
-             
+                    <script>
+                        var i = 0;
+                        var sources = ['audio/ttc_01.mp3', 'audio/ttc_02.mp3', 'audio/ttc_03.mp3'];
+                        var audio= document.getElementById("audio");
+                        audio.onended = function() {
+                            if(i==sources.length){
+                                this.pause();
+                                this.src = 'audio/ttc_00.mp3';
+                                i=0;
+                                return;
+                            }
+                            this.src = sources[i++ % sources.length];
+                            this.load();
+                            this.play();
+                        };
+             </script>
             </div>
         </div>
 
     </body>
+    <footer>
+        <hr><br>
+        TTC Emmen<br>
+        Postfach 2021<br>
+        6021 Emmembrücke<br>
+        Vorstand@ttc-emmen.ch<br><br>
+    </footer>
 </html>

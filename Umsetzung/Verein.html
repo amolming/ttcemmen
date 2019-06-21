@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
         <link rel="stylesheet" href="css/style.css" media="screen"/>
         <title>Verein - TTC Emmen</title>
         <script>
@@ -188,28 +188,24 @@
             var sources = ['videos/video_01.mp4', 'videos/video_02.mp4', 'videos/video_03.mp4', 'videos/video_004.mp4', 'videos/video_05.mp4', 'videos/video_06.mp4'];
             var vid = document.getElementById("video");
             vid.onended = function() {
+                if(i==sources.length){
+                    this.pause();
+                    this.src = 'videos/video_00.mp4';
+                    i=0;
+                    return;
+                }
                 this.src = sources[i++ % sources.length];
                 this.load();
                 this.play();
             };
-
-var video = document.querySelector('video');
-
-video.addEventListener('timeupdate', function() {
-  // don't have set the startTime yet? set it to our currentTime
-  if (!this._startTime) this._startTime = this.currentTime;
-
-  var playedTime = this.currentTime - this._startTime;
-
-  if (playedTime >= 10) this.duration=9000;
-});
-
-video.addEventListener('seeking', function() {
-  // reset the timeStart
-  this._startTime =5;
-});
         </script>
         <script type="text/javascript" src="JS/scripts.js"></script>
     </body>
-
+    <footer>
+        <hr><br>
+        TTC Emmen<br>
+        Postfach 2021<br>
+        6021 Emmembrücke<br>
+        Vorstand@ttc-emmen.ch<br><br>
+    </footer>
 </html>
